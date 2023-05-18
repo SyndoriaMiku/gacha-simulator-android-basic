@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gi_summon_history_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:configChanges="keyboardHidden"
+    android:screenOrientation="portrait">
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@android:string/untitled"
+        android:scaleX="-1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_ios_arrow" />
+
+    <TextView
+        android:id="@+id/back_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_arrow"
+        app:layout_constraintStart_toEndOf="@+id/back_arrow"
+        app:layout_constraintTop_toTopOf="@+id/back_arrow"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history_list"
+        android:layout_width="125dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/findbtn"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/earliest_text"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/archivo_black"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Từ"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_arrow" />
+
+    <EditText
+        android:id="@+id/earliest_record"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/earliest_text"
+        app:layout_constraintStart_toEndOf="@+id/earliest_text"
+        app:layout_constraintTop_toTopOf="@+id/earliest_text" />
+
+    <TextView
+        android:id="@+id/latest_text"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/archivo_black"
+        android:gravity="center"
+        android:text="Đến"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/earliest_record"
+        app:layout_constraintEnd_toStartOf="@+id/latest_record"
+        app:layout_constraintStart_toEndOf="@+id/earliest_record"
+        app:layout_constraintTop_toTopOf="@+id/earliest_record" />
+
+    <EditText
+        android:id="@+id/latest_record"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="5dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/latest_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/latest_text" />
+
+    <Button
+        android:id="@+id/findbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="24dp"
+        android:onClick="onClick"
+        android:text="Tìm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/earliest_record" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
